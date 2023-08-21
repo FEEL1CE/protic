@@ -85,14 +85,62 @@
       <div class="d-flex">
         <a href="https://forms.gle/yda92jnPQrd41kzV7" 
           class="btn-get-started scrollto">Join Now</a>
+
+          <!-- Anchor untuk memunculkan pop up  -->
+    <a href="#" class="btn mx-3 fw-bold btn-timeline" style="color: #F6C869;">Timeline</a> 
+
         <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
             class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
       </div>
     </div>
+    
   </section>
+
+ 
+
   <!-- End Hero -->
 
+   
   <main id="main">
+    <!-- Pop UP -->
+  <div class="container popup-container"> 
+        <div class="row">
+            <div class="col">
+                <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+                    <div class="timeline-step">
+                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" >
+                            <div class="inner-circle"></div>
+                            <p class="h6 mt-3 mb-1">25 Agustus - 22 September 2023</p>
+                            <p class="h6 text-muted mb-0 mb-lg-0">Pendaftaran</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" >
+                            <div class="inner-circle"></div>
+                            <p class="h6 mt-3 mb-1">23 - 24 September 2023</p>
+                            <p class="h6 text-muted mb-0 mb-lg-0">Wawancara</p>
+                        </div>
+                    </div>
+                
+                    <div class="timeline-step">
+                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" >
+                            <div class="inner-circle"></div>
+                            <p class="h6 mt-3 mb-1">25 September 2023</p>
+                            <p class="h6 text-muted mb-0 mb-lg-0">Penguguman</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step mb-0">
+                        <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" >
+                            <div class="inner-circle"></div>
+                            <p class="h6 mt-3 mb-1">26 September 2023</p>
+                            <p class="h6 text-muted mb-0 mb-lg-0">First Gathering</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Of Pop Up -->
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
       <div class="container" data-aos="fade-up">
@@ -693,7 +741,7 @@
                     class="bi bi-chevron-up icon-close"></i></div>
                 <div id="faq3" class="collapse" data-bs-parent=".faq-list">
                   <p>
-                    1. Mahasiswa Aktif PNC Jurusan Komputer & Bisnis <br>
+                    1. Mahasiswa Aktif PNC <br>
                     2. Memiliki semangat belajar tinggi dan konsisten dalam berorganisasi <br>
                     3. Memiliki ketertarikan dalam dunia IT <br>
                     4. Mampu bekerjasama dalam tim, bertanggung jawab, dan berkomitmen <br>
@@ -726,17 +774,17 @@
                     class="bi bi-chevron-up icon-close"></i></div>
                 <div id="faq5" class="collapse" data-bs-parent=".faq-list">
                   <p>
-                    Dalam pengembangan berbasis mobile kami menggunakan android studio , kotlin dan flutter serta untuk intergritas datanya menggunakan Python.
+                    Dalam pengembangan berbasis mobile kami menggunakan android studio , kotlin dan flutter.
                   </p>
                 </div>
               </li>
 
               <li>
-                <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Teknologi apa yang digunakan untuk intergritas data  ? <i
+                <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Teknologi apa yang digunakan untuk intergritas data ?6<i
                     class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
                 <div id="faq6" class="collapse" data-bs-parent=".faq-list">
                   <p>
-                    Untuk intergritas kami menggunakan Python. Python juga sering digunakan untuk machine learning & Data Science
+                  Untuk intergritas kami menggunakan Python. Python juga sering digunakan untuk machine learning & Data Science
                   </p>
                 </div>
               </li>
@@ -926,6 +974,38 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+ document.addEventListener("DOMContentLoaded", function () {
+  // Mengambil elemen-elemen yang diperlukan
+  const timelineButton = document.querySelector(".btn-timeline");
+  const popupContainer = document.querySelector(".popup-container");
+
+  // Mengatur aksi saat tombol "Timeline" diklik
+  timelineButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Mencegah perubahan URL
+    
+    if (popupContainer.style.display === "block") {
+      popupContainer.style.display = "none"; // Jika sudah terbuka, maka tutup
+    } else {
+      popupContainer.style.display = "block"; // Jika belum terbuka, maka buka
+    }
+  });
+
+  // Menutup pop-up saat di luar pop-up diklik
+  window.addEventListener("click", function (event) {
+    if (event.target !== timelineButton) {
+      popupContainer.style.display = "none";
+    }
+  });
+
+  // Mencegah penutupan pop-up jika pengguna mengklik di dalam pop-up
+  popupContainer.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+});
+
+
+  </script>
 
 </body>
 
