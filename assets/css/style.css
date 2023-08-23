@@ -591,8 +591,6 @@ h6 {
 /*--------------------------------------------------------------
 # Pop UP
 --------------------------------------------------------------*/
-
-body{margin-top:20px;}
 .timeline-steps {
     display: flex;
     justify-content: center;
@@ -658,9 +656,9 @@ body{margin-top:20px;}
 .popup-container {
   display: none;
   position: relative;
-  top: 50%;
+  top: 0%;
   left: 50%;
-  transform: translate(-70%, -110%);
+  transform: translate(-60%, -110%);
   background-color: white;
   padding: 20px;
   border-radius: 5px;
