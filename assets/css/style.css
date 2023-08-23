@@ -624,6 +624,10 @@ h6 {
         right: 7.5rem;
         top: .3125rem
     }
+    .popup-container {
+        transform: translate(-70%, -110%);
+
+    }
 }
 
 .timeline-steps .timeline-content {
@@ -1648,7 +1652,8 @@ section {
 .contact .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #ed3c0d;
+  /* background: #ed3c0d; */
+  background:#18d26e;
   text-align: left;
   padding: 15px;
   font-weight: 600;
